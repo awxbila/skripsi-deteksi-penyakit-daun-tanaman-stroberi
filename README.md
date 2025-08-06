@@ -10,7 +10,8 @@ Any technique or method to overcome this problem and getting a warning before th
 Link Deploy = pedulistroberi.com
 =======
 link deploy = https://www.pedulistroberi.com/
->>>>>>> 78f8a2d10a0fd1cfed3cf47629839b4c09c24742
+
+> > > > > > > 78f8a2d10a0fd1cfed3cf47629839b4c09c24742
 
 # Hi, I'm Nabilah ! 👋
 
@@ -20,4 +21,5 @@ link deploy = https://www.pedulistroberi.com/
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abilanr)
 =======
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abilanr/)
->>>>>>> 78f8a2d10a0fd1cfed3cf47629839b4c09c24742
+
+> > > > > > > 78f8a2d10a0fd1cfed3cf47629839b4c09c24742
