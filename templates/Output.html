@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Deteksi</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style3.css')}}">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+<main>
+<!-- ........................ ABOUT ........................... -->
+
+<div id="about">
+    <aside>
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <h1 Style="color: #ffffff">Hasil Deteksi</h1>
+                <img src="{{url_for('load_img')}}" alt='img'>            
+            </div>
+
+            <div class="about-col-2"> 
+                <h1 class="sub-title">Informasi Penyakit</h1>
+                <p align="justify">Informasi mengenai penyakit pada daun tanaman stroberi Anda dapat dilihat secara lengkap di bawah ini. Silahkan klik nama penyakit dibawah ini sesuai dengan hasil deteksi penyakit pada daun tanaman Anda</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('Leaf Blight')"><i>Leaf Blight</i></p>
+                    <p class="tab-links" onclick="opentab('Leaf Scorch')"><i>Leaf Scorch</i></p>
+                    <p class="tab-links" onclick="opentab('Leaf Spot')"><i>Leaf Spot</i></p>
+                </div>
+                <div class="tab-contents active-tab" id="Leaf Blight">
+    
+                    <ul>
+                        <li>
+                            <span id="infoumum" onclick="toggle('info')">Informasi umum &#9660 </span><br>
+                            <div id="info" class="content">
+                                <p><i>Leaf Blight</i> atau biasa disebut dengan Hawar Daun, merupakan penyakit yang disebabkan oleh infeksi jamur <i>Phomopsis obscurans</i>. Jamur biasanya tidak hanya menginfeksi daun tetapi juga bisa pada tangkai daun, tunas, kelopak, dan buah. Jamur biasanya masuk melalui transplantasi atau pucuk, melalui spora yang terciprat hujan dan tidak menyebar oleh udara. Penyakit hawar daun umumnya terjadi pada akhir musim panas atau musim gugur dan lebih menyukai cuaca basah. Daun muda sangat rentan terhadap penyakit ini, namun penyakit ini juga dapat melemahkan daun yang lebih tua pada tanaman tahunan yang dapat mengakibatkan penurunan hasil panen pada tahun berikutnya</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span id="infoumum" onclick="toggle('symptoms')">Gejala penyakit &#9660</span><br>
+                            <div id="symptoms" class="content">
+                                <p>1. Gejala dimulai dengan munculnya bintik-bintik ungu kemerahan pada daun</p>
+                                <p>2. Bintik-bintik tersebut mengikuti urat daun utama dan menjadi berbentuk V, berwarna coklat muda di dalem dengan tepi coklat tua</p>
+                                <p>3. Kadang juga memiliki tepi dan dalem yang berwarna kemerahan hingga kuning</p>
+                                <p>4. Makin lama seluruh daun dapat berubah warna menjadi coklat</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span id="infoumum" onclick="toggle('management')">Penanganan &#9660</span><br>
+                            <div id="management" class="content">
+                                <p>1. Gunakan benih dengan kualitas yang baik</p>
+                                <p>2. Tanam tanaman pada tempat yang memiliki sirkulasi udara yang baik dan tanah yang dikeringkan dengan baik</p>
+                                <p>3. Menjaga tajuk tanaman agar teteap kering dengan memberikan jarak antar tanaman dengan baik</p>
+                                <p>4. Dianjurkan menggunakan irigasi tetes</p>
+                                <p>5. Gunakan fungisida yang sesuai dengan anjuran</p>
+                                <p>6. Lakukan pemeliharaan tanaman secara rutin dengan memangkas daun yang sudah tua dan daun yang terinfeksi penyakit untuk mencegah penularan ke tanaman yang lain</p>
+
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="tab-contents" id="Leaf Scorch">
+
+                    <ul>
+                        <li>
+                            <span id="infoumum" onclick="toggle('informasi-umum')">Informasi umum &#9660</span><br>
+                            <div id="informasi-umum" class="content">
+                                <p><i>Leaf Scorch</i> atau biasa disebut dengan Hangus Daun, merupakan penyakit yang disebabkan oleh infeksi jamur <i>Diplocarpon earliana</i>. Jamur biasanya tidak hanya menginfeksi daun tetapi juga bisa pada tangkai daun, bunga, dan buah. Penyakit ini disebabkan oleh periode basah yang panjang yaitu ketika sering terjadi hujan terus menerus. Jamur ini menyukai cuaca yang basah dan hangat dengan suhu 15 hingga 25 derajat celcius. Daun yang berumur setengah baya atau lebih tua biasanya yang paling rentan terhadap penyakit ini. Penyakit ini dapat mempengaruhi keberhasilan tanaman melewati musim dingin</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span id="infoumum" onclick="toggle('gejala')">Gejala penyakit &#9660</span><br>
+                            <div id="gejala" class="content">
+                                <p>1. Gejala dimulai dengan munculnya banyak bintik-bintik ungu kecil yang menyebar tidak beraturan pada permukaan daun</p>
+                                <p>2. Makin lama bintik makin banyak dan mulai menyatu, bila daun mulai tertutup oleh bintik maka warnanya akan menjadi ungu hingga merah terang bahkan cokelat</p>
+                                <p>3. Daun akhirnya akan mengering dan tepinya melengkung, sehingga daun terlihat seperti hangus terbakar</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span id="infoumum" onclick="toggle('penanganan')">Penanganan &#9660</span><br>
+                            <div id="penanganan" class="content">
+                                <p>1. Gunakan benih dengan kualitas yang baik</p>
+                                <p>2. Tanam tanaman pada tempat yang memiliki sirkulasi udara yang baik dan tanah yang dikeringkan dengan baik</p>
+                                <p>3. Menjaga tajuk tanaman agar teteap kering dengan memberikan jarak antar tanaman dengan baik</p>
+                                <p>4. Dianjurkan menggunakan irigasi tetes</p>
+                                <p>5. Gunakan fungisida yang sesuai dengan anjuran</p>
+                                <p>6. Lakukan pemeliharaan tanaman secara rutin dengan memangkas daun yang sudah tua dan daun yang terinfeksi penyakit untuk mencegah penularan ke tanaman yang lain</p>
+
+                            </div>
+                        </li> 
+                    </ul>
+                
+                </div>
+                <div class="tab-contents" id="Leaf Spot">
+
+                    <ul>
+                        <li>
+                            <span id="infoumum" onclick="toggle('informasi')">Informasi umum &#9660</span><br>
+                            <div id="informasi" class="content">
+                                <p> <i>Leaf Spot</i> atau biasa disebut dengan Bercak Daun, merupakan penyakit yang disebabkan oleh infeksi jamur <i>Mycosphaerella fragariae</i>. Jamur biasanya tidak hanya menginfeksi daun tetapi juga bisa pada buah, kelopak, tangkai daun, dan tunas. Penyakit ini tumbuh subur di tempat dengan kelembapan yang tinggi dan suhu antara 10 hingga 27 derajat celcius. Penyebaran penyakit ini biasanya dapat melalui percikan air hujan atau irigasi dari atas. Daun yang sudah berumur setengah baya yang paling rentan terhadap penyakit ini</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span id="infoumum" onclick="toggle('ciriciri')">Gejala penyakit &#9660</span><br>
+                            <div id="ciriciri" class="content">
+                                <p>1. Gejala dimulai dengan munculnya bercak bulat kecil tidak beraturan dengan bagian tengah berwarna terang hingga cokelat dengan tepi berwarna ungu</p>
+                                <p>2. Makin lama bercak membesar dan pada daun muda bercak tetap berwarna cokelat muda, sedangkan pada daun yang lebih tua bagian tengahnya berwarna keabu-abuan hingga putih</p>
+                                <p>3. Bercak memiliki tepi berwarna ungu kemerahan hingga cokelat karat</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span id="infoumum" onclick="toggle('solusi')">Penanganan &#9660</span><br>
+                            <div id="solusi" class="content">
+                                <p>1. Gunakan benih dengan kualitas yang baik</p>
+                                <p>2. Tanam tanaman pada tempat yang memiliki sirkulasi udara yang baik dan tanah yang dikeringkan dengan baik</p>
+                                <p>3. Menjaga tajuk tanaman agar teteap kering dengan memberikan jarak antar tanaman dengan baik</p>
+                                <p>4. Dianjurkan menggunakan irigasi tetes</p>
+                                <p>5. Gunakan fungisida yang sesuai dengan anjuran</p>
+                                <p>6. Lakukan pemeliharaan tanaman secara rutin dengan memangkas daun yang sudah tua dan daun yang terinfeksi penyakit untuk mencegah penularan ke tanaman yang lain</p>
+
+                            </div>
+                        </li> 
+                    </ul>
+                
+                </div>
+              
+        </div>
+    </div>
+    </aside>   
+ 
+</div>
+
+<script>
+
+    var tablinks= document.getElementsByClassName("tab-links");
+    var tabcontents= document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+    
+</script>
+
+<script>
+    function toggle(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === 'none') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+<script>
+    // Sembunyikan informasi gejala penyakit dan penanganan saat pertama kali halaman dimuat
+    document.addEventListener('DOMContentLoaded', function () {
+        var symptoms = document.getElementById('symptoms');
+        var management = document.getElementById('management');
+        symptoms.style.display = 'none';
+        management.style.display = 'none';
+    });
+
+    // Fungsi untuk menampilkan informasi gejala penyakit saat tombol diklik
+    function showSymptoms() {
+        var symptoms = document.getElementById('symptoms');
+        symptoms.style.display = 'block';
+    }
+
+    // Fungsi untuk menampilkan informasi penanganan saat tombol diklik
+    function showManagement() {
+        var management = document.getElementById('management');
+        management.style.display = 'block';
+    }
+</script>
+
+<script>
+    // Sembunyikan informasi gejala penyakit dan penanganan "busuk hitam" saat pertama kali halaman dimuat
+    document.addEventListener('DOMContentLoaded', function () {
+        var symptomsBusukHitam = document.getElementById('gejala');
+        var managementBusukHitam = document.getElementById('penanganan');
+        symptomsBusukHitam.style.display = 'none';
+        managementBusukHitam.style.display = 'none';
+    });
+
+    // Fungsi untuk menampilkan informasi gejala penyakit "busuk hitam" saat tombol diklik
+    function showSymptomsBusukHitam() {
+        var symptomsBusukHitam = document.getElementById('gejala');
+        symptomsBusukHitam.style.display = 'block';
+    }
+
+    // Fungsi untuk menampilkan informasi penanganan "busuk hitam" saat tombol diklik
+    function showManagementBusukHitam() {
+        var managementBusukHitam = document.getElementById('penanganan');
+        managementBusukHitam.style.display = 'block';
+    }
+</script>
+
+<script>
+    // Sembunyikan informasi gejala penyakit dan penanganan "leaf spot" saat pertama kali halaman dimuat
+    document.addEventListener('DOMContentLoaded', function () {
+        var symptomsLeafSpot = document.getElementById('ciriciri');
+        var managementLeafSpot = document.getElementById('solusi');
+        symptomsLeafSpot.style.display = 'none';
+        managementLeafSpot.style.display = 'none';
+    });
+
+    // Fungsi untuk menampilkan informasi gejala penyakit "leaf spot" saat tombol diklik
+    function showSymptomsLeafSpot() {
+        var symptomsLeafSpot = document.getElementById('ciriciri');
+        symptomsLeafSpot.style.display = 'block';
+    }
+
+    // Fungsi untuk menampilkan informasi penanganan "leaf spot" saat tombol diklik
+    function showManagementLeafSpot() {
+        var managementLeafSpot = document.getElementById('solusi');
+        managementLeafSpot.style.display = 'block';
+    }
+</script>
+
+
+</body>
+</html>

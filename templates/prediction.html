@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Deteksi Penyakit pada Daun Tanaman Stroberi</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='style_strawberry.css')}}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='popup.css')}}">
+</head>
+<body>
+    <center>
+        <div class='cont' >
+            <h2>Deteksi Penyakit pada Daun Tanaman Stroberi</h2>
+        </div>
+
+        <form id="formUpload" method="POST" action="/predictionstrawberry" enctype="multipart/form-data">
+            <label for="fileInput" class='btn' id="uploadLabel">Unggah File</label> 
+            <input type="file" id="fileInput" name='image' style="display: none;">
+
+            <input type="button" class='btn' value="Buka Kamera" onclick="openCamera()">
+            <input type="button" id="captureButton" class='btn' value="Capture" onclick="captureImage()" style="display: none;">
+        </form>
+    
+        <video id="video" style="display:none;"></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+    </center>
+
+    <div class="footer">
+        <p><br></p>
+    </div>
+
+    <div class="popup">
+        <div class="content">
+            <h1 id="Heading"><span> Perhatian!</span><br><br> <br>Silahkan unggah file atau buka kamera!</h1>
+            <button onclick="toggle()" class="submitId2"> Ok!!!</button>
+        </div>
+    </div>
+
+    <script>
+
+        const container = document.querySelector(".container");
+        const popup = document.querySelector('.popup');
+        const submitId2 = document.querySelector(".submitId2");
+        const fileInput = document.getElementById('fileInput');
+        const uploadLabel = document.getElementById('uploadLabel');
+        
+        window.onload = function () {
+            setTimeout(function () {
+                popup.style.top = "50%";
+                popup.style.visibility = "visible";
+                popup.style.opacity = "1";
+                popup.style.transition = "0.5s";
+                container.style.filter ="blur(10px)";
+            }, 1000)
+        }
+
+        function toggle(){
+            popup.style.top = "40%";
+            popup.style.visibility = "hidden";
+            popup.style.opacity = "0";
+            popup.style.transition = "0.5s";
+            container.style.filter ="blur(0px)";
+        }
+
+        let stream;
+        const videoElement = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const captureButton = document.getElementById('captureButton');
+
+        async function openCamera() {
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                videoElement.srcObject = stream;
+                videoElement.play();
+                videoElement.style.display = 'block';
+                captureButton.style.display = 'block';
+                uploadLabel.style.display = 'none'; // Hide the upload file button
+            } catch (error) {
+                console.error('Error accessing camera:', error);
+            }
+        }
+
+        function captureImage() {
+            const ctx = canvas.getContext('2d');
+            canvas.width = videoElement.videoWidth;
+            canvas.height = videoElement.videoHeight;
+            ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob(function(blob) {
+                if (blob) {
+                    const file = new File([blob], 'captured_image.jpg', { type: 'image/jpeg' });
+                    const formData = new FormData();
+                    formData.append('image', file);
+                    fetch('/predictionstrawberry', {
+                        method: 'POST',
+                        body: formData
+                    }).then(response => {
+                        if (response.ok) {
+                            window.location.href = 'Output.html';
+                        } else {
+                            console.error('Failed to send image to server.');
+                        }
+                    }).catch(error => {
+                        console.error('Error sending image to server:', error);
+                    });
+                } else {
+                    console.error('Blob is empty.');
+                }
+            });
+        }
+
+        // Event listener for file input
+        fileInput.addEventListener('change', function() {
+            const form = document.getElementById('formUpload');
+            const formData = new FormData(form);
+            fetch('/predictionstrawberry', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = 'Output.html';
+                } else {
+                    console.error('Failed to send image to server.');
+                }
+            }).catch(error => {
+                console.error('Error sending image to server:', error);
+            });
+        });
+
+    </script>
+</body>
+</html>

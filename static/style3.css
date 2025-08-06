@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("petik.jpg");
+    color: #000000;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    padding: 5px 5%; 
+}
+
+
+
+/* --------------------ABOUT-------------------------- */
+
+#about{
+    padding: 0px 0;
+    color: #000000;
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    }
+
+.about-col-1{
+    flex-basis: 35;
+    
+}
+
+.about-col-1 img{
+    width: 150%;
+    background-color: greenyellow; /* Gray background color */
+    border-radius: 15px;
+    margin: 0 0 40px;
+    padding: 20px;
+
+}
+
+.about-col-2{
+    flex-basis: 60%;
+    background-color: #EAEAEA; /* Gray background color */
+    border-radius: 15px;
+    margin: 0 0 40px;
+    padding: 20px;
+}
+
+
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.tab-titles{
+    display:flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 30x;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;  
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #F97B22;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span{
+    color: #F97B22;
+    font-size: 18px;
+      
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+
+}
+
+
+    .tab-links.active-link:hover {
+        background-color: #FDA172 ;
+    }
+
+    .tab-links.active-link{
+      transition: background-color 0.5s;
+    }
+
+    .tab-links:hover {
+        background-color: #FDA172 ;
+    }
+
+    .tab-links{
+      transition: background-color 0.5s;
+    }
+
+    #infoumum:hover {
+        /* Tambahkan gaya CSS yang ingin Anda terapkan saat hover di sini */
+        background-color: lightsalmon;
+        color: #333;
+      }   
+

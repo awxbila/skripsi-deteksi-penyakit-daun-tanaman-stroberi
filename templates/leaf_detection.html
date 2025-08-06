@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" href="{{url_for('static',filename='tooplate-style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+
+    <title>Indentify Plant Diseases</title>
+</head>
+
+<body>
+    <div class="tm-container mx-auto">
+
+        <section class="tm-section tm-section-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="tm-bg-circle-white tm-flex-center-v">
+                            <header class="text-center">
+                                <h1 class="tm-site-title">Daun Stroberi </h1>
+                                <p class="tm-site-subtitle">Identifikasi Penyakit Tanaman Anda</p>
+                            </header>
+                            <p>Kehilangan hasil panen karena penyakit tanaman merupakan faktor utama yang berkontribusi
+                                terhadap penurunan hasil panen. Metode Deep Learning dengan algoritma cerdas untuk identifikasi penyakit tanaman
+                                sangat dibutuhkan untuk mengurangi tingkat kerugian dan meminimalkan masalah kesehatan tanaman.
+                            </p>
+                            <p class="text-center mt-4 mb-0">
+                                <a data-scroll href="/inputleafdisease" class="btn tm-btn-secondary">Deteksi</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!--    <script src="js/smooth-scroll.polyfills.min.js"></script>-->
+
+    <script src="static/smooth-scroll.polyfills.min.js"></script>
+
+    <!-- https://github.com/cferdinandi/smooth-scroll -->
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            easing: 'easeInOutQuart',
+            speed: 800
+        });
+    </script>
+</body>
+</html>
